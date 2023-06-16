@@ -8,7 +8,7 @@ var clienteRepository = new ClienteRepository();
 app.MapGet("/", () => "Hello World!");
 app.MapPost("/cliente", (Cliente cliente) => {
     var clienteSalvo = clienteRepository.Salvar(cliente);
-    return "Cliente salvo com sucesso!" + clienteSalvo.Id;
+    return clienteSalvo;
 });
 
 app.Run();
